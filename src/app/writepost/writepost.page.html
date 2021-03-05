@@ -1,0 +1,42 @@
+
+<ion-toolbar color='warning'>
+  <ion-buttons slot="start" (click)="openFirst()">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-buttons slot="secondary">
+  </ion-buttons>
+  <ion-title>Create a Post</ion-title>
+</ion-toolbar>
+
+
+<ion-menu side="start" menuId="first" contentId="main" class="my-custom-menu">
+  <ion-header>
+    <ion-toolbar color="warning">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="viewpost()">View Post</ion-item>
+      <ion-item >Creage Post</ion-item>
+      <ion-item (click)='managepost()'> Manage Post</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+
+
+
+
+<ion-content>
+
+
+  <ion-input class='text'  placeholder="Topic" value={{this.topic}} [(ngModel)]="this.topic"></ion-input>
+  <!-- <ion-input class='text2'  placeholder="Detail" value={{this.name}} [(ngModel)]="this.name"></ion-input> -->
+  <ion-textarea class='text2' placeholder="Detail" autoGrow='true' value={{this.detail}} [(ngModel)]="this.detail"></ion-textarea>
+  <ion-button class='buttons' shape="round" color='warning' (click)="sendata()" >
+    <ion-text >
+      Post
+    </ion-text>
+  </ion-button>
+</ion-content>

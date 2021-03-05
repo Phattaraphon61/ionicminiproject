@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'writepost/:name',
+    loadChildren: () => import('./writepost/writepost.module').then( m => m.WritepostPageModule)
+  },
+  {
+    path: 'viewpost/:name',
+    loadChildren: () => import('./viewpost/viewpost.module').then( m => m.ViewpostPageModule)
+  },
+  {
+    path: 'managepost/:name',
+    loadChildren: () => import('./managepost/managepost.module').then( m => m.ManagepostPageModule)
+  },
 ];
 
 @NgModule({
