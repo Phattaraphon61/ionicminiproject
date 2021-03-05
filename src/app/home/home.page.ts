@@ -1,4 +1,3 @@
-import { crudapi } from '../crudapi';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
@@ -10,7 +9,7 @@ import { NavController } from '@ionic/angular';
 export class HomePage {
   name: string;
   datat: any;
-  constructor(private getdata: crudapi, public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController) { }
 
   ngOnInit() {
   };
